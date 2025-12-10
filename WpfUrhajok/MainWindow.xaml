@@ -25,6 +25,7 @@
             <Button Content="2020 előtt indított küldetések" Margin="10" Click="elottIndit"></Button>
             <Button Content="Melyik a legujabb küldetés?" Margin="10" Click="legujabbKuldetes"/>
             <Button Content="Az összes űrhajós száma" Margin="10" Click="Osszesurhajos"/>
+            <Button Content="1M+ sikeres táv" Margin="10" Click="sikeresTav"/>
         </StackPanel>
         <DataGrid Grid.Column="1" x:Name="dataGrid" SelectionChanged="uzemanyag">
             

@@ -188,5 +188,20 @@ namespace WpfUrhajok
                 MessageBox.Show("Az összes űrhajós száma: "+urhajok.Sum(u => u.Legenyseg).ToString());
             }
         }
+
+        private void sikeresTav(object sender, RoutedEventArgs e)
+        {
+            if (urhajok != null && urhajok.Count != 0)
+            {
+                dataGrid.ItemsSource = urhajok.Where
+                    (x => x.KuldetesStatusz == "Sikeres"&& x.MaxHatotav>1000000);
+
+            }
+            else
+            {
+                MessageBox.Show("Nincs űrhajó!");
+            }
+
+        }
     }
 }
