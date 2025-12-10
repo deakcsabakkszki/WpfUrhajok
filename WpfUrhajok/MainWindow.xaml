@@ -16,6 +16,8 @@
             <Button Content="Adatok betöltése" Margin="10" Click="betoltes"/>
             <Button Content="Hány űrhajó van?" Margin="10" Click="mennyiseg"></Button>
             <Button Content="Melyiknek van a legnagyobb hatótávja?" Margin="10" Click="legnagyobbHatotav"></Button>
+            <Button Content="Kik voltak sikeresek a küldetésen?" Margin="10" Click="sikeres"></Button>
+
         </StackPanel>
         <DataGrid Grid.Column="1" x:Name="dataGrid">
             

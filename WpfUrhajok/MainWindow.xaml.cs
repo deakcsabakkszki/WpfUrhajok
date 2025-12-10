@@ -89,5 +89,18 @@ namespace WpfUrhajok
 
 
         }
+
+        private void sikeres(object sender, RoutedEventArgs e)
+        {
+            if(urhajok != null&& urhajok.Count!=0)
+            {
+                dataGrid.ItemsSource=urhajok.Where(x => x.KuldetesStatusz == "Sikeres");
+                
+            }
+            else
+            {
+                MessageBox.Show("Nincs űrhajó!");
+            }
+        }
     }
 }
