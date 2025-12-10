@@ -92,7 +92,7 @@ namespace WpfUrhajok
 
         private void sikeres(object sender, RoutedEventArgs e)
         {
-            if(urhajok != null&& urhajok.Count!=0)
+            if(urhajok != null&& urhajok.Count ==0)
             {
                 dataGrid.ItemsSource=urhajok.Where(x => x.KuldetesStatusz == "Sikeres");
                 
@@ -100,6 +100,18 @@ namespace WpfUrhajok
             else
             {
                 MessageBox.Show("Nincs űrhajó!");
+            }
+        }
+        private void AvgLegenyseg(object sender, RoutedEventArgs e)
+        {
+            if(urhajok == null || urhajok.Count == 0)
+            {
+                MessageBox.Show("Nincsenek űrhajók");
+            }
+            else
+            {
+                double atlag = urhajok.Average(x => x.Legenyseg);
+                MessageBox.Show($"Az átlagos legénység száma: {atlag:F2}");
             }
         }
     }
