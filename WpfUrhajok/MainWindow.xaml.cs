@@ -150,5 +150,18 @@ namespace WpfUrhajok
             }
 
         }
+
+        private void elottIndit(object sender, RoutedEventArgs e)
+        {
+            if (urhajok != null && urhajok.Count != 0)
+            {
+                dataGrid.ItemsSource = urhajok.Where(x => x.InditasEve < 2020);
+
+            }
+            else
+            {
+                MessageBox.Show("Nincs űrhajó!");
+            }
+        }
     }
 }
