@@ -163,5 +163,18 @@ namespace WpfUrhajok
                 MessageBox.Show("Nincs űrhajó!");
             }
         }
+
+        private void legujabbKuldetes(object sender, RoutedEventArgs e)
+        {
+            if (urhajok.Count == 0)
+            {
+                MessageBox.Show("Nincs küldetés.");
+            }
+            else
+            {
+                Urhajo legujabbKuldetes = urhajok.MaxBy(x => x.InditasEve);
+                MessageBox.Show($"A legújabb küldetés: {legujabbKuldetes.Nev} \nIndítás éve: {legujabbKuldetes.InditasEve}");
+            }
+        }
     }
 }
