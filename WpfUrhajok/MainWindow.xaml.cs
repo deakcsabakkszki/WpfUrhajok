@@ -75,5 +75,19 @@ namespace WpfUrhajok
                 
 
         }
+        private void legnagyobbHatotav(object sender, RoutedEventArgs e)
+        {
+            if (urhajok.Count == 0)
+            {
+                MessageBox.Show("Nincs űrhajó.");
+            }
+            else
+            {
+                Urhajo legnagyobbHat = urhajok.MaxBy(x => x.MaxHatotav);
+                MessageBox.Show($"Név: {legnagyobbHat.Nev} \nHatótáv: {legnagyobbHat.MaxHatotav} km");
+            }
+
+
+        }
     }
 }

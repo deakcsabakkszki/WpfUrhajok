@@ -14,7 +14,8 @@
         <StackPanel Grid.Column="0" Background="DarkBlue" Orientation="Vertical">
             <Label Content="Űrhajó műveletek" FontSize="25" Foreground="White"/>
             <Button Content="Adatok betöltése" Margin="10" Click="betoltes"/>
-            <Button Content="Hány űrhajó van?" Margin="10" Click="mennyiseg"></Button>        
+            <Button Content="Hány űrhajó van?" Margin="10" Click="mennyiseg"></Button>
+            <Button Content="Melyiknek van a legnagyobb hatótávja?" Margin="10" Click="legnagyobbHatotav"></Button>
         </StackPanel>
         <DataGrid Grid.Column="1" x:Name="dataGrid">
             
