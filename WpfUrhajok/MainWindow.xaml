@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfUrhajok"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Űrhajók" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Background="DarkBlue" Orientation="Vertical">
+            <Label Content="Űrhajó műveletek" FontSize="25" Foreground="White"/>
+        </StackPanel>
+        <DataGrid Grid.Column="1" x:Name="dataGrid">
+            
+        </DataGrid>
     </Grid>
 </Window>

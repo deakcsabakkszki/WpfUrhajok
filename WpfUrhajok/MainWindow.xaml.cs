@@ -16,6 +16,27 @@ namespace WpfUrhajok
     /// </summary>
     public partial class MainWindow : Window
     {
+        public class Urhajo
+        {
+            public string Nev {  get; set; }
+            public int Legenyseg { get; set; }
+            public int MaxHatotav { get; set; }
+            public int UzemanyagSzint { get; set; }
+            public string Gyarto {  get; set; }
+            public string KuldetesStatusz { get; set; }
+            public int InditasEve {  get; set; }
+
+            public Urhajo(string nev, int legenyseg, int maxHatotav, int uzemanyagSzint, string gyarto, string kuldetesStatusz, int inditasEve)
+            {
+                Nev = nev;
+                Legenyseg = legenyseg;
+                MaxHatotav = maxHatotav;
+                UzemanyagSzint = uzemanyagSzint;
+                Gyarto = gyarto;
+                KuldetesStatusz = kuldetesStatusz;
+                InditasEve = inditasEve;
+            }
+        }
         public MainWindow()
         {
             InitializeComponent();
