@@ -119,5 +119,19 @@ namespace WpfUrhajok
         {
             dataGrid.ItemsSource = urhajok.GroupBy(x => x.Gyarto).Select(g=> new {gyarto = g.Key, Darab = g.Count()}).ToList();
         }
+
+        private void KeresesNevAlapjan(object sender, RoutedEventArgs e)
+        {
+            List<Urhajo> ujlista = new List<Urhajo>();
+            foreach (var urhajo in urhajok)
+            {
+                if (urhajo.Nev == textBox.Text)
+                {
+                    ujlista.Add(urhajo);
+                }
+            }
+            dataGrid.ItemsSource = ujlista;
+            dataGrid.ItemsSource = urhajok.Where(urhajo => urhajo.Nev == textBox.Text).ToList();
+        }
     }
 }
