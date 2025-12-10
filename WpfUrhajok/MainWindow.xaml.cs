@@ -92,7 +92,7 @@ namespace WpfUrhajok
 
         private void sikeres(object sender, RoutedEventArgs e)
         {
-            if(urhajok != null&& urhajok.Count ==0)
+            if(urhajok != null&& urhajok.Count !=0)
             {
                 dataGrid.ItemsSource=urhajok.Where(x => x.KuldetesStatusz == "Sikeres");
                 
@@ -122,16 +122,33 @@ namespace WpfUrhajok
 
         private void KeresesNevAlapjan(object sender, RoutedEventArgs e)
         {
-            List<Urhajo> ujlista = new List<Urhajo>();
-            foreach (var urhajo in urhajok)
+            if (urhajok != null && urhajok.Count != 0)
             {
-                if (urhajo.Nev == textBox.Text)
+                List<Urhajo> ujlista = new List<Urhajo>();
+                foreach (var urhajo in urhajok)
                 {
-                    ujlista.Add(urhajo);
+                    if (urhajo.Nev == textBox.Text)
+                    {
+                        ujlista.Add(urhajo);
+                    }
                 }
+                dataGrid.ItemsSource = ujlista;
+                dataGrid.ItemsSource = urhajok.Where(urhajo => urhajo.Nev == textBox.Text).ToList();
             }
-            dataGrid.ItemsSource = ujlista;
-            dataGrid.ItemsSource = urhajok.Where(urhajo => urhajo.Nev == textBox.Text).ToList();
+            else
+            {
+                MessageBox.Show("Nincsennek űrhajók.");
+            }
+            
+        }
+
+        private void uzemanyag(object sender, SelectionChangedEventArgs e)
+        {
+            if (dataGrid.SelectedItem is Urhajo)
+            {
+                progBar.Value = ((Urhajo)dataGrid.SelectedItem).UzemanyagSzint;
+            }
+
         }
     }
 }
