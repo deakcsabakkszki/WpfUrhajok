@@ -114,5 +114,10 @@ namespace WpfUrhajok
                 MessageBox.Show($"Az átlagos legénység száma: {atlag:F2}");
             }
         }
+
+        private void GyartokSzerint(object sender, RoutedEventArgs e)
+        {
+            dataGrid.ItemsSource = urhajok.GroupBy(x => x.Gyarto).Select(g=> new {gyarto = g.Key, Darab = g.Count()}).ToList();
+        }
     }
 }
