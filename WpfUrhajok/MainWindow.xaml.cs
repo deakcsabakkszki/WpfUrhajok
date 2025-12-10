@@ -63,5 +63,17 @@ namespace WpfUrhajok
             dataGrid.ItemsSource = urhajok;
         }
 
+        private void mennyiseg(object sender, RoutedEventArgs e)
+        {
+            if (urhajok.Count == 0)
+            {
+                MessageBox.Show("Nincs űrhajó.");
+            }
+            else {
+                MessageBox.Show($"Az űrhajók száma: {urhajok.Count()}");
+            }
+                
+
+        }
     }
 }
