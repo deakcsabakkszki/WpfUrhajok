@@ -176,5 +176,17 @@ namespace WpfUrhajok
                 MessageBox.Show($"A legújabb küldetés: {legujabbKuldetes.Nev} \nIndítás éve: {legujabbKuldetes.InditasEve}");
             }
         }
+
+        private void Osszesurhajos(object sender, RoutedEventArgs e)
+        {
+            if (urhajok.Count==0)
+            {
+                MessageBox.Show("Nincsenek űrhajósok.");
+            }
+            else
+            {
+                MessageBox.Show("Az összes űrhajós száma: "+urhajok.Sum(u => u.Legenyseg).ToString());
+            }
+        }
     }
 }

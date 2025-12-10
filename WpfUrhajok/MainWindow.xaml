@@ -24,6 +24,7 @@
             <ProgressBar x:Name="progBar" Margin="10" Height="20" Minimum="0" Maximum="100"/>
             <Button Content="2020 előtt indított küldetések" Margin="10" Click="elottIndit"></Button>
             <Button Content="Melyik a legujabb küldetés?" Margin="10" Click="legujabbKuldetes"/>
+            <Button Content="Az összes űrhajós száma" Margin="10" Click="Osszesurhajos"/>
         </StackPanel>
         <DataGrid Grid.Column="1" x:Name="dataGrid" SelectionChanged="uzemanyag">
             
